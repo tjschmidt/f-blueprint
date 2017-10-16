@@ -1,5 +1,6 @@
 class Grid {
     private static gridLineStyle = '#777777';
+    private static gridLineWidth = 1;
 
     private entities: Entity[];
     private gridLines: boolean;
@@ -53,26 +54,29 @@ class Grid {
         if (this.gridLines) {
             // Save and replace the stroke style
             let oldStyle = context.strokeStyle;
+            let oldWidth = context.lineWidth;
             context.strokeStyle = Grid.gridLineStyle;
+            context.lineWidth = Grid.gridLineWidth;
 
             // Get canvas dimensions
             let canvasWidth = context.canvas.clientWidth;
             let canvasHeight = context.canvas.clientHeight;
 
             // Draw vertical grid lines
-            for (let i = 0; i < this.width; ++i) {
+            for (let i = 1; i < this.width; ++i) {
                 let xOffset = i * this.gridSize;
                 strokeLine(context, xOffset, 0, xOffset, canvasHeight);
             }
 
             // Draw horizontal grid lines
-            for (let i = 0; i < this.height; ++i) {
+            for (let i = 1; i < this.height; ++i) {
                 let yOffset = i * this.gridSize;
                 strokeLine(context, 0, yOffset, canvasWidth, yOffset);
             }
 
             // Restore stroke style
             context.strokeStyle = oldStyle;
+            context.lineWidth = oldWidth;
         }
 
         // Draw entities
