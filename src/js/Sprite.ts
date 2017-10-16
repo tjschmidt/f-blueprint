@@ -1,4 +1,7 @@
-class Sprite {
+import {SpriteSheet} from "./SpriteSheet";
+import {SpriteType} from "./SpriteType";
+
+export class Sprite {
     constructor(readonly spriteSheet: SpriteSheet, readonly x: number, readonly y: number, readonly width: number, readonly height: number, readonly type: SpriteType) {
     }
 

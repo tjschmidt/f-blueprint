@@ -1,3 +1,11 @@
+import {Library} from "./Library";
+import {Factory} from "./Factory";
+import {EntityType} from "./EntityType";
+import {Entity} from "./Entity";
+import {SpriteSheet} from "./SpriteSheet";
+import {Sprite} from "./Sprite";
+import {SpriteType} from "./SpriteType";
+
 let spriteSheet = new SpriteSheet('spritesheet.png');
 
 let spriteLibrary = new Library<Sprite>(100, (sprite: Sprite) => {

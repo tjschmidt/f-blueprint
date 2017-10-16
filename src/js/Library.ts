@@ -1,4 +1,4 @@
-class Library<T> {
+export class Library<T> {
     private storage: T[];
 
     constructor(capacity: number, readonly keyFn: (arg: T) => number = null) {

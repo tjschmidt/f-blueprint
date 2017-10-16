@@ -1,4 +1,8 @@
-class Scene {
+import {Grid} from "./Grid";
+import {Entity} from "./Entity";
+import {binarySearch, getCanvasHeight, getCanvasWidth} from "./util";
+
+export class Scene {
     private grid: Grid;
     private entities: Entity[];
 

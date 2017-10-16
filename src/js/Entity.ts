@@ -1,4 +1,7 @@
-class Entity {
+import {EntityType} from "./EntityType";
+import {Sprite} from "./Sprite";
+
+export class Entity {
     private static currentId = 1;
 
     readonly id: number;
@@ -18,10 +21,9 @@ class Entity {
     }
 
     draw(context: CanvasRenderingContext2D, x: number, y: number, width: number, height: number): Entity {
-        if (this.sprite !== null) {
+        if (this.sprite !== null)
             this.sprite.draw(context, x, y, width, height);
-            return this;
-        }
+        return this;
     }
 
 }

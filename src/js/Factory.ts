@@ -1,4 +1,6 @@
-class Factory<K, T> {
+import {Library} from "./Library";
+
+export class Factory<K, T> {
     private library: Library<() => T>;
 
     constructor(readonly keyFn: (key: K) => number = null) {

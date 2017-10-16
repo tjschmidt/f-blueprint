@@ -1,4 +1,6 @@
-class Grid {
+import {strokeLine} from "./util";
+
+export class Grid {
     private static gridLineStyle = '#777777';
     private static gridLineWidth = 1;
 

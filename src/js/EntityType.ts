@@ -1,4 +1,4 @@
-enum EntityType {
+export enum EntityType {
     Black,
     Blue,
     Green,
