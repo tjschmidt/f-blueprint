@@ -14,6 +14,14 @@ function _binarySearch(array: any[], key: any, keyFn: (arg: any) => any, low: nu
     return _binarySearch(array, key, keyFn, low, mid - 1);
 }
 
+function getCanvasWidth(context: CanvasRenderingContext2D): number {
+    return context.canvas.clientWidth;
+}
+
+function getCanvasHeight(context: CanvasRenderingContext2D): number {
+    return context.canvas.clientHeight;
+}
+
 function strokeLine(context: CanvasRenderingContext2D, sx: number, sy: number, dx: number, dy: number) {
     context.beginPath();
     context.moveTo(sx, sy);
