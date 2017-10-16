@@ -2,42 +2,18 @@ class Grid {
     private static gridLineStyle = '#777777';
     private static gridLineWidth = 1;
 
-    private entities: Entity[];
     private gridLines: boolean;
-    private gridSize: number;
 
-    constructor(readonly width: number, readonly height: number) {
-        this.entities = [];
+    constructor(readonly width: number, readonly height: number, readonly gridSize: number = 32) {
         this.gridLines = true;
-        this.gridSize = 32;
     }
 
-    addEntity(entity: Entity): void {
-        this.entities.push(entity);
-        this.entities.sort((a: Entity, b: Entity) => {
-            return a.id - b.id;
-        });
+    getX(x: number): number {
+        return x * this.gridSize;
     }
 
-    findEntity(id: number): number {
-        return binarySearch(this.entities, id, (entity) => {
-            return entity.id;
-        });
-    }
-
-    getEntity(id: number): Entity {
-        let index = this.findEntity(id);
-        if (index < 0)
-            return null;
-        return this.entities[index];
-    }
-
-    removeEntity(id: number): boolean {
-        let index = this.findEntity(id);
-        if (index < 0)
-            return false;
-        this.entities.splice(index, 1);
-        return true;
+    getY(y: number): number {
+        return y * this.gridSize;
     }
 
     setGridLines(enable: boolean): Grid {
@@ -77,11 +53,6 @@ class Grid {
             // Restore stroke style
             context.strokeStyle = oldStyle;
             context.lineWidth = oldWidth;
-        }
-
-        // Draw entities
-        for (let entity of this.entities) {
-            entity.draw(context, entity.x * this.gridSize, entity.y * this.gridSize, this.gridSize, this.gridSize);
         }
 
         return this;
