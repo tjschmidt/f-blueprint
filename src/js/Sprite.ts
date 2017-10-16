@@ -1,5 +1,5 @@
 class Sprite {
-    constructor(readonly spriteSheet: SpriteSheet, readonly x: number, readonly y: number, readonly width: number, readonly height: number) {
+    constructor(readonly spriteSheet: SpriteSheet, readonly x: number, readonly y: number, readonly width: number, readonly height: number, readonly type: SpriteType) {
     }
 
     draw(context: CanvasRenderingContext2D, x: number, y: number, width: number, height: number): void {

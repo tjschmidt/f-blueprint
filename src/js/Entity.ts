@@ -4,18 +4,16 @@ class Entity {
     readonly id: number;
     x: number;
     y: number;
-    private sprite: Sprite;
 
-    constructor(x: number, y: number) {
-        this.x = x;
-        this.y = y;
-        this.sprite = null;
+    constructor(readonly type: EntityType, readonly sprite: Sprite) {
+        this.type = type;
         this.id = Entity.currentId;
         ++Entity.currentId;
     }
 
-    setSprite(sprite: Sprite): Entity {
-        this.sprite = sprite;
+    moveTo(x: number, y: number): Entity {
+        this.x = x;
+        this.y = y;
         return this;
     }
 
