@@ -1,4 +1,4 @@
-export enum SpriteType {
+enum SpriteType {
     Black,
     Blue,
     Green,

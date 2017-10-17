@@ -1,6 +1,7 @@
-export enum EntityType {
+enum EntityType {
     Black,
     Blue,
     Green,
-    Red
+    Red,
+    Multi
 }

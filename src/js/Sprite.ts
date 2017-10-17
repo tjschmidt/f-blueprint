@@ -1,7 +1,7 @@
-import {SpriteSheet} from "./SpriteSheet";
-import {SpriteType} from "./SpriteType";
+/// <reference path="SpriteSheet.ts"/>
+/// <reference path="SpriteType.ts"/>
 
-export class Sprite {
+class Sprite {
     constructor(readonly spriteSheet: SpriteSheet, readonly x: number, readonly y: number, readonly width: number, readonly height: number, readonly type: SpriteType) {
     }
 

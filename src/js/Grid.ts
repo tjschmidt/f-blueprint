@@ -1,6 +1,6 @@
-import {strokeLine} from "./util";
+/// <reference path="util.ts"/>
 
-export class Grid {
+class Grid {
     private static gridLineStyle = '#777777';
     private static gridLineWidth = 1;
 

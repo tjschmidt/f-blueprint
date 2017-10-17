@@ -1,10 +1,11 @@
-import {Library} from "./Library";
-import {Factory} from "./Factory";
-import {EntityType} from "./EntityType";
-import {Entity} from "./Entity";
-import {SpriteSheet} from "./SpriteSheet";
-import {Sprite} from "./Sprite";
-import {SpriteType} from "./SpriteType";
+/// <reference path="Library.ts"/>
+/// <reference path="Factory.ts"/>
+/// <reference path="EntityType.ts"/>
+/// <reference path="Entity.ts"/>
+/// <reference path="SpriteSheet.ts"/>
+/// <reference path="Sprite.ts"/>
+/// <reference path="SpriteType.ts"/>
+/// <reference path="SpriteGroup.ts"/>
 
 let spriteSheet = new SpriteSheet('spritesheet.png');
 
@@ -28,4 +29,11 @@ entityFactory.add(EntityType.Green, function () {
 });
 entityFactory.add(EntityType.Red, function () {
     return new Entity(EntityType.Red, spriteLibrary.get(SpriteType.Red))
+});
+entityFactory.add(EntityType.Multi, function () {
+    return new Entity(EntityType.Multi, null, new SpriteGroup([
+        spriteLibrary.get(SpriteType.Blue),
+        spriteLibrary.get(SpriteType.Red),
+        spriteLibrary.get(SpriteType.Green)
+    ]))
 });

@@ -1,6 +1,6 @@
-import {Library} from "./Library";
+/// <reference path="Library.ts"/>
 
-export class Factory<K, T> {
+class Factory<K, T> {
     private library: Library<() => T>;
 
     constructor(readonly keyFn: (key: K) => number = null) {

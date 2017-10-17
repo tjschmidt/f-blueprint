@@ -1,4 +1,4 @@
-export class SpriteSheet {
+class SpriteSheet {
     private image: HTMLImageElement;
 
     constructor(src: string) {

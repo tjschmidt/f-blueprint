@@ -1,8 +1,8 @@
-import {Grid} from "./Grid";
-import {Entity} from "./Entity";
-import {binarySearch, getCanvasHeight, getCanvasWidth} from "./util";
+/// <reference path="Grid.ts"/>
+/// <reference path="Entity.ts"/>
+/// <reference path="util.ts"/>
 
-export class Scene {
+class Scene {
     private grid: Grid;
     private entities: Entity[];
 
