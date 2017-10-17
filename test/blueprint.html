@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Factorio Blueprint</title>
+</head>
+<link rel="stylesheet" type="text/css" href="../src/css/blueprint.css">
+<script src="../build/util.js" type="text/javascript"></script>
+<script src="../build/EntityType.js" type="text/javascript"></script>
+<script src="../build/SpriteType.js" type="text/javascript"></script>
+<script src="../build/SpriteSheet.js" type="text/javascript"></script>
+<script src="../build/Sprite.js" type="text/javascript"></script>
+<script src="../build/Library.js" type="text/javascript"></script>
+<script src="../build/Factory.js" type="text/javascript"></script>
+<script src="../build/Entity.js" type="text/javascript"></script>
+<script src="../build/util.js" type="text/javascript"></script>
+<script src="../build/Grid.js" type="text/javascript"></script>
+<script src="../build/Scene.js" type="text/javascript"></script>
+<script src="../build/main.js" type="text/javascript"></script>
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script>
+    $(function () {
+        var context = $('canvas')[0].getContext('2d');
+
+        var scene = new Scene(16, 16, context);
+
+        var entity;
+        entity = entityFactory.create(EntityType.Multi);
+        entity.moveTo(3, 3);
+        scene.addEntity(entity);
+        scene.draw();
+
+        setInterval(function () {
+            entity.nextSprite();
+            scene.draw();
+        }, 1000);
+
+    });
+</script>
+<body>
+<canvas width="512" height="512"></canvas>
+<!--<label><input id="grid-toggle" type="checkbox" checked> Show Grid</label>-->
+</body>
+</html>
