@@ -22,15 +22,14 @@
         scene.addEntity(entity);
         scene.draw();
 
-        setInterval(function () {
-            entity.nextSprite();
-            scene.draw();
-        }, 1000);
+        $('#grid-toggle').change(function () {
+            scene.setGridLines($(this).is(':checked'));
+        }).change();
 
     });
 </script>
 <body>
 <canvas width="512" height="512"></canvas>
-<!--<label><input id="grid-toggle" type="checkbox" checked> Show Grid</label>-->
+<label><input id="grid-toggle" type="checkbox" checked> Show Grid</label>
 </body>
 </html>

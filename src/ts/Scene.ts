@@ -53,4 +53,9 @@ class Scene {
         this.entities.splice(index, 1);
         return true;
     }
+
+    setGridLines(enable: boolean): void {
+        this.grid.setGridLines(enable);
+        this.draw();
+    }
 }
